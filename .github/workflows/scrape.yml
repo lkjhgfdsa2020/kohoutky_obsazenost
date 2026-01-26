@@ -18,14 +18,6 @@ jobs:
           python-version: "3.12"
       - run: pip install -r requirements.txt
 
-      - name: Skip outside opening hours (Prague time)
-        run: |
-          HOUR=$(TZ=Europe/Prague date +%H)
-          if [ "$HOUR" -lt 6 ] || [ "$HOUR" -ge 22 ]; then
-            echo "Outside 06:00–22:00 Europe/Prague. Skipping scrape."
-            exit 0
-          fi
-
       - run: python scrape.py
 
       - name: Commit updated CSV
