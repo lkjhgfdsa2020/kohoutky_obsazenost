@@ -2,7 +2,7 @@ name: Scrape aquapark occupancy
 
 on:
   schedule:
-    - cron: "*/10 * * * *"   # every 10 minutes (UTC)
+    - cron: "*/15 6-21 * * *"   # every 15 minutes between 06:00 and 21:59 (UTC)
   workflow_dispatch: {}
 
 permissions:
